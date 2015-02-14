@@ -13,8 +13,8 @@ end
 # ======= Gems =======
 # --------------------
 
-gem 'twitter-bootswatch-rails', '3.2.0.0'
-gem 'twitter-bootswatch-rails-helpers', '3.2.0.0'
+gem 'twitter-bootswatch-rails'
+gem 'twitter-bootswatch-rails-helpers'
 gem 'therubyracer'
 
 gem_group :development, :test do
