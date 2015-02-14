@@ -5,6 +5,10 @@ unless `rails -v`.include?("Rails 4.2")
   end
 end
 
+def source_paths
+  [File.expand_path(File.dirname(__FILE__))]
+end
+
 # ####################
 # ======= Gems =======
 # --------------------
@@ -32,6 +36,7 @@ run_bundle
 
 # RSpec
 generate 'rspec:install'
+copy_file 'templates/rails_helper.rb', 'spec/rails_helper.rb'
 
 # Spring
 run 'spring binstub --all'
