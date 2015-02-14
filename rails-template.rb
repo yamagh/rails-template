@@ -34,22 +34,26 @@ run_bundle
 # ==== Initialize ====
 # --------------------
 
-# RSpec
+# RSpec #######################################################################
+
 generate 'rspec:install'
 run 'rm spec/rails_helper.rb'
 copy_file 'templates/rails_helper.rb', 'spec/rails_helper.rb'
 
 
-# Spring
+# Spring ######################################################################
+
 run 'spring binstub --all'
 
 
-# Guard
+# Guard #######################################################################
+
 run 'guard init'
 run 'sed -i "" "s;bundle exec rspec;bin/rspec;g" Guardfile'
 
 
-# BootSwatch
+# BootSwatch ##################################################################
+
 theme = 'simplex'
 generate "bootswatch:install #{theme} --force"
 generate "bootswatch:import #{theme} --force"
@@ -75,10 +79,13 @@ run "echo 'Rails.application.config.assets.precompile += %w( #{theme}.js )'  >> 
 run 'rm app/views/layouts/application.html.erb'
 run 'mv app/views/layouts/simplex.html.erb app/views/layouts/application.html.erb'
 
-# git
+# git #########################################################################
+
 git :init
 git add: "."
 git commit: %Q{ -m 'Initial commit' }
+
+# Comments ####################################################################
 
 puts '========================================'
 puts 'Add variable like below'
