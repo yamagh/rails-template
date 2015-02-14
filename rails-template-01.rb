@@ -23,6 +23,8 @@ gem_group :development, :test do
   gem 'spring-commands-rspec'
 end
 
+run_bundle
+
 
 # ####################
 # ==== Initialize ====
@@ -36,14 +38,10 @@ run 'spring binstub --all'
 
 # Guard
 run 'guard init'
-puts <<-EOS
-Please edit Guardfile
-==========================================================================
-- guard :rspec, cmd: "bundle exec rspec" do
-+ guard :rspec, cmd: "bin/rspec" do
-==========================================================================
-EOS
+run 'sed -i "" "s;bundle exec rspec;bin/rspec;g" Guardfile'
 
 # git
 git :init
+git add: "."
+git commit: %Q{ -m 'Initial commit' }
 
