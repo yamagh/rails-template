@@ -31,7 +31,7 @@ run_bundle
 # --------------------
 
 # RSpec
-run 'rails g rspec:install'
+generate 'rspec:install'
 
 # Spring
 run 'spring binstub --all'
