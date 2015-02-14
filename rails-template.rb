@@ -36,6 +36,7 @@ run_bundle
 
 # RSpec
 generate 'rspec:install'
+run 'rm spec/rails_helper.rb'
 copy_file 'templates/rails_helper.rb', 'spec/rails_helper.rb'
 
 # Spring
