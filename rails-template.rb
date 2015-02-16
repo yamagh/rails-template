@@ -13,20 +13,23 @@ end
 # ======= Gems =======
 # --------------------
 
-gem 'twitter-bootswatch-rails'
-gem 'twitter-bootswatch-rails-helpers'
-gem 'therubyracer'
+run 'rm Gemfile'
+copy_file 'templates/Gemfile', 'Gemfile'
 
-gem_group :development, :test do
-  gem 'rspec-rails'
-  gem 'spring-commands-rspec'
-  gem 'rb-fsevent' if `uname` =~ /Darwin/
-  gem 'guard-rspec'
-  gem 'terminal-notifier-guard'
-  gem 'guard-livereload', require: false
-  gem 'capybara'
-  gem 'capybara-webkit'
-end
+#gem 'twitter-bootswatch-rails'
+#gem 'twitter-bootswatch-rails-helpers'
+#gem 'therubyracer'
+#
+#gem_group :development, :test do
+#  gem 'rspec-rails'
+#  gem 'spring-commands-rspec'
+#  gem 'rb-fsevent' if `uname` =~ /Darwin/
+#  gem 'guard-rspec'
+#  gem 'terminal-notifier-guard'
+#  gem 'guard-livereload', require: false
+#  gem 'capybara'
+#  gem 'capybara-webkit'
+#end
 
 run_bundle
 
@@ -42,7 +45,7 @@ copy_file 'templates/rails_helper.rb', 'spec/rails_helper.rb'
 
 # Spring ######################################################################
 
-run 'spring binstub --all'
+#run 'spring binstub --all'
 
 # Guard #######################################################################
 
