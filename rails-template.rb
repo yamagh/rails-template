@@ -15,6 +15,7 @@ end
 
 run 'rm Gemfile'
 copy_file 'templates/Gemfile', 'Gemfile'
+run_bundle
 
 #gem 'twitter-bootswatch-rails'
 #gem 'twitter-bootswatch-rails-helpers'
@@ -31,7 +32,7 @@ copy_file 'templates/Gemfile', 'Gemfile'
 #  gem 'capybara-webkit'
 #end
 
-run_bundle
+#run_bundle
 
 # ####################
 # ==== Initialize ====
@@ -45,7 +46,7 @@ copy_file 'templates/rails_helper.rb', 'spec/rails_helper.rb'
 
 # Spring ######################################################################
 
-#run 'spring binstub --all'
+run 'spring binstub --all'
 
 # Guard #######################################################################
 
@@ -57,6 +58,7 @@ run 'sed -i "" "s;bundle exec rspec;bin/rspec;g" Guardfile'
 
 # BootSwatch ##################################################################
 
+run 'spring stop'
 theme = 'simplex'
 generate "bootswatch:install #{theme} --force"
 generate "bootswatch:import #{theme} --force"
