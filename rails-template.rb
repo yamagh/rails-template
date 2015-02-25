@@ -13,10 +13,6 @@ end
 # ======= Gems =======
 # --------------------
 
-#run 'rm Gemfile'
-#copy_file 'templates/Gemfile', 'Gemfile'
-#run_bundle
-
 gem 'twitter-bootswatch-rails'
 gem 'twitter-bootswatch-rails-helpers'
 gem 'therubyracer'
