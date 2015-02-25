@@ -84,7 +84,7 @@ run "echo 'Rails.application.config.assets.precompile += %w( #{theme}.css )' >> 
 run "echo 'Rails.application.config.assets.precompile += %w( #{theme}.js )'  >> config/initializers/assets.rb"
 
 run 'rm app/views/layouts/application.html.erb'
-run 'mv app/views/layouts/simplex.html.erb app/views/layouts/application.html.erb'
+run 'mv app/views/layouts/simplex.html.slim app/views/layouts/application.html.slim'
 
 # git #########################################################################
 
