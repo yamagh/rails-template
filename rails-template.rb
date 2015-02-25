@@ -13,26 +13,28 @@ end
 # ======= Gems =======
 # --------------------
 
-run 'rm Gemfile'
-copy_file 'templates/Gemfile', 'Gemfile'
-run_bundle
-
-#gem 'twitter-bootswatch-rails'
-#gem 'twitter-bootswatch-rails-helpers'
-#gem 'therubyracer'
-#
-#gem_group :development, :test do
-#  gem 'rspec-rails'
-#  gem 'spring-commands-rspec'
-#  gem 'rb-fsevent' if `uname` =~ /Darwin/
-#  gem 'guard-rspec'
-#  gem 'terminal-notifier-guard'
-#  gem 'guard-livereload', require: false
-#  gem 'capybara'
-#  gem 'capybara-webkit'
-#end
-
+#run 'rm Gemfile'
+#copy_file 'templates/Gemfile', 'Gemfile'
 #run_bundle
+
+gem 'twitter-bootswatch-rails'
+gem 'twitter-bootswatch-rails-helpers'
+gem 'therubyracer'
+
+gem_group :development, :test do
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
+  gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
+  gem 'guard-livereload', require: false
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'slim-rails'
+  gem 'html2slim'
+end
+
+run_bundle
 
 # ####################
 # ==== Initialize ====
